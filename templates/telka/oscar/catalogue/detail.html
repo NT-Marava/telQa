@@ -1,0 +1,383 @@
+{% extends "oscar/layout.html" %}
+
+{% load history_tags %}
+{% load currency_filters %}
+{% load reviews_tags %}
+{% load static %}
+{% load product_tags %}
+{% load display_tags %}
+{% load i18n %}
+{% load purchase_info_tags %}
+{% load image_tags %}
+
+{% block title %}
+{{ product.get_title }} | {{ block.super }}
+{% endblock %}
+
+{% block description %}
+{{ product.description|default:""|striptags }}
+{% endblock %}
+
+{% block breadcrumbs %}
+<nav aria-label="breadcrumb" class="breadcrumb-nav">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="{{ homepage_url }}">{% trans "Home" %}</a>
+            </li>
+            {% with category=product.categories.all.0 %}
+            {% for c in category.get_ancestors_and_self %}
+            <li class="breadcrumb-item">
+                <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+            </li>
+            {% endfor %}
+            <li class="breadcrumb-item active">{{ product.get_title }}</li>
+
+            {% get_back_button as backbutton %}
+            {% if backbutton %}
+            <li class="float-right">
+                <a href="{{ backbutton.url }}">
+                    <i class="icon-arrow-left"></i> {{ backbutton.title }}
+                </a>
+            </li>
+            {% endif %}
+            {% endwith %}
+        </ol>
+    </div>
+</nav>
+{% endblock %}
+
+{% block header %}
+{% endblock header %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-9">
+            <div class="product-details-top">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="product-gallery">
+                            {% block product_gallery %}
+
+                            {% include "oscar/catalogue/partials/gallery.html" %}
+
+                            {% endblock %}
+                        </div>
+                    </div>
+
+
+                    {% block product_main %}
+                    <div class="col-md-6">
+                        <div class="product-details product-details-sidebar">
+                            {% if user.is_staff %}
+                            <a class="float-right d-none d-md-block"
+                                href="{% url 'dashboard:catalogue-product' pk=product.id %}">
+                                <small><i class="fas fa-pencil-alt"></i> {% trans "Edit this product" %}</small>
+                            </a>
+                            {% endif %}
+                            <h1></h1>
+                            <h1 class="product-title">{{ product.get_title }}</h1>
+
+
+
+                           <!--  {% iffeature "reviews" %}
+                            {% include "oscar/catalogue/reviews/partials/review_stars.html" %}
+                            {% endiffeature %} -->
+
+                            {% block product_stock_record %}
+                            {% include "oscar/catalogue/partials/stock_record.html" with verbose=1 %}
+                            {% endblock %}
+
+                            <hr />
+
+                            <div class="details-filter-row details-row-size">
+
+
+                                {% if not product.is_parent %}
+                                {% block product_basket_form %}
+                                {% include "oscar/catalogue/partials/add_to_basket_form.html" %}
+                                {% endblock %}
+                                {% else %}
+                                {% block variants %}
+                                <h4>{% trans 'Variants:' %}</h4>
+                                {% for child in product.children.all %}
+                                {% purchase_info_for_product request child as child_session %}
+                                {% if child_session.availability.is_available_to_buy %}
+                                <a href="{{ child.get_absolute_url }}">{{ child.get_title }}</a><br>
+                                {% endif %}
+                                {% endfor %}
+                                {% endblock %}
+                                {% endif %}
+                            </div>
+
+
+
+                            <div class="product-details-action">
+                               <!--  <div class="details-action-col">
+                                    <label for="qty">Qty:</label>
+                                    <div class="product-details-quantity">
+                                        <input type="number" id="qty" class="form-control" value="1" min="1" max="10"
+                                            step="1" data-decimals="0" required>
+                                    </div> 
+
+                                    <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                                </div>
+
+                                <div class="details-action-wrapper">
+                                    <a href="#" class="btn-product btn-wishlist" title="Wishlist"><span>Add to
+                                            Wishlist</span></a>
+                                     <a href="#" class="btn-product btn-compare" title="Compare"><span>Add to
+                                            Compare</span></a>
+                                </div> -->
+                            </div>
+
+
+                        </div>
+                    </div>
+                    {% endblock product_main %}
+                </div>
+            </div>
+
+            <div class="product-details-tab">
+                <ul class="nav nav-pills justify-content-center" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="product-desc-link" data-toggle="tab" href="#product-desc-tab"
+                            role="tab" aria-controls="product-desc-tab" aria-selected="true">Description</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="product-info-link" data-toggle="tab" href="#product-info-tab" role="tab"
+                            aria-controls="product-info-tab" aria-selected="false">Additional
+                            information</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="product-shipping-link" data-toggle="tab" href="#product-shipping-tab"
+                            role="tab" aria-controls="product-shipping-tab" aria-selected="false">Shipping & Returns</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="product-review-link" data-toggle="tab" href="#product-review-tab"
+                            role="tab" aria-controls="product-review-tab" aria-selected="false">Reviews (2)</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="product-desc-tab" role="tabpanel"
+                        aria-labelledby="product-desc-link">
+                        <div class="product-desc-content">
+                            {% block product_description %}
+                            {% if product.description %}
+                            <h3>{% trans "Product Description" %}</h3>
+                            <p>{{ product.description|safe }}</p>
+                            {% endif %}
+                            {% endblock %}
+                        </div>
+                    </div><!-- .End .tab-pane -->
+                    <div class="tab-pane fade" id="product-info-tab" role="tabpanel"
+                        aria-labelledby="product-info-link">
+                        <div class="product-desc-content">
+                            {% block product_info %}
+                            <div class="sub-header">
+                                <h2>{% trans "Product Information" %}</h2>
+                            </div>
+                            <table class="table table-striped">
+                                {% if product.upc %}
+                                <tr>
+                                    <th>{% trans "UPC" %}</th>
+                                    <td>{{ product.upc }}</td>
+                                </tr>
+                                {% endif %}
+                                <tr>
+                                    <th>{% trans "Product Type" %}</th>
+                                    <td>{{ product.get_product_class.name }}</td>
+                                </tr>
+
+                                {% purchase_info_for_product request product as session %}
+                                {% if session.price.exists %}
+                                <tr>
+                                    <th>{% trans "Price (excl. tax)" %}</th>
+                                    <td>{{ session.price.excl_tax|currency:session.price.currency }}</td>
+                                </tr>
+                                {% if session.price.is_tax_known %}
+                                <tr>
+                                    <th>{% trans "Price (incl. tax)" %}</th>
+                                    <td>{{ session.price.incl_tax|currency:session.price.currency }}</td>
+                                </tr>
+                                <tr>
+                                    <th>{% trans "Tax" %}</th>
+                                    <td>{{ session.price.tax|currency:session.price.currency }}</td>
+                                </tr>
+                                {% endif %}
+                                <tr>
+                                    <th>{% trans "Availability" %}</th>
+                                    <td>{{ session.availability.message }}</td>
+                                </tr>
+                                {% endif %}
+                                {% for av in product.attribute_values.all %}
+                                <tr>
+                                    <th>{{ av.attribute.name }}</th>
+                                    <td>{{ av.value_as_html }}</td>
+                                </tr>
+                                {% endfor %}
+                                {% iffeature "reviews" %}
+                                <tr>
+                                    <th>{% trans "Number of reviews" %}</th>
+                                    <td>{{ product.num_approved_reviews }}</td>
+                                </tr>
+                                {% endiffeature %}
+                            </table>
+                            {% endblock %}
+                        </div>
+                    </div><!-- .End .tab-pane -->
+                    <div class="tab-pane fade" id="product-shipping-tab" role="tabpanel"
+                        aria-labelledby="product-shipping-link">
+                        <div class="product-desc-content">
+                            <h3>Delivery & returns</h3>
+                            <p>We deliver to over 100 countries around the world. For full details of the delivery
+                                options we offer, please view our <a href="#">Delivery information</a><br>
+                                We hope you’ll love every purchase, but if you ever need to return an item you can
+                                do so
+                                within a month of receipt. For full details of how to make a return, please view our
+                                <a href="#">Returns information</a>
+                            </p>
+                        </div><!-- End .product-desc-content -->
+                    </div><!-- .End .tab-pane -->
+                    <div class="tab-pane fade" id="product-review-tab" role="tabpanel"
+                        aria-labelledby="product-review-link">
+                        <div class="reviews">
+                            <h3>Reviews (2)</h3>
+                            <div class="review">
+                                <div class="row no-gutters">
+                                    <div class="col-auto">
+                                        <h4><a href="#">Samanta J.</a></h4>
+                                        <div class="ratings-container">
+                                            <div class="ratings">
+                                                <div class="ratings-val" style="width: 80%;"></div>
+                                                <!-- End .ratings-val -->
+                                            </div><!-- End .ratings -->
+                                        </div><!-- End .rating-container -->
+                                        <span class="review-date">6 days ago</span>
+                                    </div><!-- End .col -->
+                                    <div class="col">
+                                        <h4>Good, perfect size</h4>
+
+                                        <div class="review-content">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus cum
+                                                dolores assumenda asperiores facilis porro reprehenderit animi culpa
+                                                atque blanditiis commodi perspiciatis doloremque, possimus,
+                                                explicabo,
+                                                autem fugit beatae quae voluptas!</p>
+                                        </div><!-- End .review-content -->
+
+                                        <div class="review-action">
+                                            <a href="#"><i class="icon-thumbs-up"></i>Helpful (2)</a>
+                                            <a href="#"><i class="icon-thumbs-down"></i>Unhelpful (0)</a>
+                                        </div><!-- End .review-action -->
+                                    </div><!-- End .col-auto -->
+                                </div><!-- End .row -->
+                            </div><!-- End .review -->
+
+                            <div class="review">
+                                <div class="row no-gutters">
+                                    <div class="col-auto">
+                                        <h4><a href="#">John Doe</a></h4>
+                                        <div class="ratings-container">
+                                            <div class="ratings">
+                                                <div class="ratings-val" style="width: 100%;"></div>
+                                                <!-- End .ratings-val -->
+                                            </div><!-- End .ratings -->
+                                        </div><!-- End .rating-container -->
+                                        <span class="review-date">5 days ago</span>
+                                    </div><!-- End .col -->
+                                    <div class="col">
+                                        <h4>Very good</h4>
+
+                                        <div class="review-content">
+                                            <p>Sed, molestias, tempore? Ex dolor esse iure hic veniam laborum
+                                                blanditiis
+                                                laudantium iste amet. Cum non voluptate eos enim, ab cumque nam,
+                                                modi,
+                                                quas iure illum repellendus, blanditiis perspiciatis beatae!</p>
+                                        </div><!-- End .review-content -->
+
+                                        <div class="review-action">
+                                            <a href="#"><i class="icon-thumbs-up"></i>Helpful (0)</a>
+                                            <a href="#"><i class="icon-thumbs-down"></i>Unhelpful (0)</a>
+                                        </div><!-- End .review-action -->
+                                    </div><!-- End .col-auto -->
+                                </div><!-- End .row -->
+                            </div><!-- End .review -->
+                        </div><!-- End .reviews -->
+                    </div><!-- .End .tab-pane -->
+                </div><!-- End .tab-content -->
+            </div>
+
+
+        </div>
+
+        <aside class="col-lg-3">
+            <div class="sidebar sidebar-product">
+
+                <div class="widget widget-products">
+                    {% with recommended_products=product.sorted_recommended_products|slice:":6" %}
+                    {% if recommended_products %}
+                    <h3 class="widget-title">You May Also Like</h3><!-- End .widget-title -->
+                    <div class="products">
+                        {% for product in recommended_products %}
+                        <div class="product product-sm">
+                            <figure class="product-media">
+                                {% with image=product.primary_image %}
+                                {% oscar_thumbnail image.original "x155" upscale=False as thumb %}
+                                <a href="{{ product.get_absolute_url }}">
+                                    <img src="{{ thumb.url }}" alt="{{ product.get_title }}" class="product-image">
+                                </a>
+                                {% endwith %}
+                            </figure>
+                            <div class="product-body">
+                                <h5 class="product-title"><a href="{{ product.get_absolute_url }}"
+                                        title="{{ product.get_title }}">
+                                        {{ product.get_title|truncatewords:4 }}</a></h5>
+                                <div class="product-price">
+                                    <span class="new-price">{% purchase_info_for_product request product as session %}
+
+                                        {% if session.price.exists %}
+                                        <div class="product-price">
+                                            {% if session.price.excl_tax == 0 %}
+                                            {% trans "Free" %}
+                                            {% elif session.price.is_tax_known %}
+                                            {{ session.price.incl_tax|currency:session.price.currency }}
+                                            {% else %}{{ session.price.excl_tax|currency:session.price.currency }}
+                                            {% endif %}
+                                            {% else %}
+                                            <p class="price_color">&nbsp;</p>
+                                            {% endif %}
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    {% endwith %}
+                    <a href="category.html" class="btn btn-outline-dark-3"><span>View More Products</span><i
+                            class="icon-long-arrow-right"></i></a>
+                </div>
+
+                <div class="widget widget-banner-sidebar">
+                    <div class="banner-sidebar-title"></div><!-- End .ad-title -->
+
+                    <div class="banner-sidebar banner-overlay">
+                        <a href="#">
+                            <img src="{% static 'assets/images/blog/sidebar/banner.jpg' %}" alt="banner">
+                        </a>
+                    </div><!-- End .banner-ad -->
+                </div><!-- End .widget -->
+            </div><!-- End .sidebar sidebar-product -->
+        </aside>
+    </div>
+</div>
+<!-- End of product page -->
+{% endblock content %}
+
+{% block extrascripts %}
+{{ block.super }}
+{% endblock %}

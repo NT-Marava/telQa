@@ -1,0 +1,19 @@
+{% load currency_filters %}
+{% load i18n %}
+
+<div class="col-lg-4 col-xxl-5col d-flex justify-content-end align-items-center">
+  <div class="header-dropdown-link">
+
+
+      <div class="dropdown cart-dropdown">
+          <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+              <i class="icon-shopping-cart"></i>
+              <span class="cart-count">2</span>
+              <span class="cart-txt">Cart</span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right">
+            {% include "oscar/basket/partials/basket_quick.html" %}
+          </div>
+      </div>
+  </div>
+</div>

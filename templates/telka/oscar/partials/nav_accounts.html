@@ -1,0 +1,51 @@
+{% load i18n %}
+                <div class="container-fluid">
+                    <div class="header-left">
+                        <a href="tel:#"><i class="icon-phone"></i>Call: +0123 456 789</a>
+                    </div><!-- End .header-left -->
+
+                    <div class="header-right">
+
+                        <ul class="top-menu">
+                            <li>
+                                <a href="#">Links</a>
+                                <ul class="menus">
+                                    <li>
+                                        <div class="header-dropdown">
+                                            <a href="#">USD</a>
+                                            <div class="header-menu">
+                                                <ul>
+                                                    <li><a href="#">Eur</a></li>
+                                                    <li><a href="#">Usd</a></li>
+                                                </ul>
+                                            </div><!-- End .header-menu -->
+                                        </div><!-- End .header-dropdown -->
+                                    </li>
+										{% if user.is_authenticated %}
+										{% block nav_account_navbar_authenticated %}
+											<li>
+												{% if num_unread_notifications > 0 %}
+													{# If user has new notifications - we change account link to go to inbox #}
+													<a href="{% url 'customer:notifications-inbox' %}">
+														<i class="icon-user"></i>
+														{% trans "Account" %}
+														<span class="label label-warning">{{ num_unread_notifications }}</span>
+													</a>
+												{% else %}
+													<a href="{% url 'customer:summary' %}"><i class="icon-user"></i> {% trans "Account" %}</a>
+												{% endif %}
+											</li>
+											{% if user.is_staff or perms.partner.dashboard_access %}
+												<li><a href="{% url 'dashboard:index' %}"><i class="icon-list-ul"></i> {% trans "Dashboard" %}</a></li>
+											{% endif %}
+											<li><a id="logout_link" href="{% url 'customer:logout' %}"><i class="icon-signout"></i> {% trans "Logout" %}</a></li>
+						                {% endblock %}
+										{% else %}
+											<li><a id="login_link" href="{% url 'customer:login' %}"><i class="icon-signin"></i> {% trans "Login or register" %}</a></li>
+										{% endif %}
+                                </ul>
+							</li>
+                        </ul><!-- End .top-menu -->
+                    </div><!-- End .header-right -->
+                </div><!-- End .container -->
+            

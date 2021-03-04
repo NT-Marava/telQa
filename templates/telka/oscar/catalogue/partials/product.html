@@ -1,0 +1,73 @@
+{% load display_tags %}
+{% load i18n %}
+{% load image_tags %}
+{% load reviews_tags %}
+
+
+
+{% block product %}
+
+       
+            <div class="product product-7 text-center">
+                {% block product_image %}
+                <figure class="product-media">
+                    {% with image=product.primary_image %}
+                    {% oscar_thumbnail image.original "x155" upscale=False as thumb %}
+                    <a href="{{ product.get_absolute_url }}">
+                        <img src="{{ thumb.url }}" alt="{{ product.get_title }}" class="product-image">
+                    </a>
+
+                     <div class="product-action-vertical">
+                        <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add to
+                                wishlist</span></a>
+                        <a href="popup/quickView.html" class="btn-product-icon btn-quickview"
+                            title="Quick view"><span>Quick view</span></a>
+                        <a href="#" class="btn-product-icon btn-compare" title="Compare"><span>Compare</span></a>
+                    </div> 
+
+                    <div class="product-action ">
+                        {% if not product.is_parent and not product.has_options %}
+                        {% include "oscar/catalogue/partials/add_to_basket_form_compact.html" %}
+                        {% endif %}
+                    </div> 
+                    {% endwith %}
+                </figure>
+                {% endblock %}
+
+                <div class="product-body">
+                    {% block product_title %}
+                
+                    <h3 class="product-title">
+                        <a href="{{ product.get_absolute_url }}"
+                            title="{{ product.get_title }}">{{ product.get_title|truncatewords:3}}</a></h3>
+                    {% endblock %}
+
+                    {% block product_price %}
+                    <div class="">
+                        {% include "oscar/catalogue/partials/stock_record.html" %}
+                        
+                    </div>
+                    {% endblock %}
+
+                    {% block product_review %}
+                    {% iffeature "reviews" %}
+                    <div class="ratings-container">
+                        <div class="ratings">
+                            <div class="ratings-val" style="width: 0%;"></div>
+                        </div>
+                        <span class="ratings-text {{ product.rating|as_stars }}"></span>
+                    </div>
+                    {% endiffeature %}
+                    {% endblock %}
+
+
+                    
+                </div>
+            </div>
+        
+
+{% endblock %}
+
+
+
+

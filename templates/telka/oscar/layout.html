@@ -1,0 +1,218 @@
+{% extends "oscar/base.html" %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'assets/vendor/line-awesome/css/line-awesome.min.css' %}">
+<!-- Plugins CSS File -->
+<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/plugins/owl-carousel/owl.carousel.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/plugins/magnific-popup/magnific-popup.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/plugins/jquery.countdown.css' %}">
+<!-- Main CSS File -->
+<link rel="stylesheet" type="text/css" href="{% static 'oscar/css/styles.cs' %}" />
+<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/plugins/fontawesome/css/all.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/skins/skin-demo-14.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/demos/demo-14.cs' %}">
+
+{% endblock %}
+
+{% block layout %}
+<div class="page-wrapper">
+    <header class="header header-14">
+        <div class="header-top">
+            {# Top-horizontal bar with account, notifictions, dashboard links #}
+            {% include "oscar/partials/nav_accounts.html" %}
+
+            {# Site logo/title, mini-basket, browse dropdown and searchbox #}
+
+        </div>
+
+        <div class="header-middle">
+            <div class="container-fluid">
+                <div class="row">
+                    {% include "oscar/partials/brand.html" %}
+                    {% block navigation %}
+                    {% include "oscar/partials/nav_primary.html" %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+
+        <div class="header-bottom sticky-header">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-auto col-lg-3 col-xl-3 col-xxl-2 header-left">
+                        <div class="dropdown category-dropdown show is-on" data-visible="true">
+                            <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false" data-display="static"
+                                title="Browse Categories">
+                                Browse Categories
+                            </a>
+
+                            <!-- <div class="dropdown-menu show">
+                                <nav class="side-nav">
+                                    <ul class="menu-vertical sf-arrows">
+                                        <li class="megamenu-container">
+                                            <a class="sf-with-ul" href="#"><i class="icon-laptop"></i>Electronics</a>
+                                        </li>
+                                        <li class="megamenu-container">
+                                            <a class="sf-with-ul" href="#"><i class="icon-couch"></i>Furniture</a>
+
+                                        </li>
+                                        <li class="megamenu-container">
+                                            <a class="sf-with-ul" href="#"><i
+                                                    class="icon-concierge-bell"></i>Cooking</a>
+
+
+                                        </li>
+                                        <li class="megamenu-container">
+                                            <a class="sf-with-ul" href="#"><i class="icon-tshirt"></i>Clothing</a>
+
+
+                                        </li>
+                                        <li><a href="#"><i class="icon-blender"></i>Home Appliances</a></li>
+                                        <li><a href="#"><i class="icon-heartbeat"></i>Healthy & Beauty</a></li>
+                                        <li><a href="#"><i class="icon-shoe-prints"></i>Shoes & Boots</a></li>
+                                        <li><a href="#"><i class="icon-map-signs"></i>Travel & Outdoor</a></li>
+                                        <li><a href="#"><i class="icon-mobile-alt"></i>Smart Phones</a></li>
+                                        <li><a href="#"><i class="icon-tv"></i>TV & Audio</a></li>
+                                        <li><a href="#"><i class="icon-shopping-bag"></i>Backpack & Bag</a></li>
+                                        <li><a href="#"><i class="icon-music"></i>Musical Instruments</a></li>
+                                        <li><a href="#"><i class="icon-gift"></i>Gift Ideas</a></li>
+                                    </ul>
+                                </nav>
+                            </div> -->
+                        </div>
+                    </div>
+
+                    <div class="col col-lg-6 col-xl-6 col-xxl-8 header-center">
+                        <nav class="main-nav">
+                            <ul class="menu sf-arrows">
+                                <li class="megamenu-container active">
+                                    <a href="index.html" class="sf-with-ul">Home</a>
+                    
+                                    <div class="megamenu demo">
+                                        <div class="menu-col">
+                                            <div class="menu-title">Choose your demo</div><!-- End .menu-title -->
+                                        </div><!-- End .menu-col -->
+                                    </div><!-- End .megamenu -->
+                                </li>
+                                <li>
+                                    <a href="category.html" class="sf-with-ul">Shop</a>
+                                </li>
+                                <li>
+                                    <a href="product.html" class="sf-with-ul">Product</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="sf-with-ul">Pages</a>
+                    
+                                    <ul>
+                                        <li>
+                                            <a href="about.html" class="sf-with-ul">About</a>
+                    
+                                            <ul>
+                                                <li><a href="about.html">About 01</a></li>
+                                                <li><a href="about-2.html">About 02</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="contact.html" class="sf-with-ul">Contact</a>
+                    
+                                            <ul>
+                                                <li><a href="contact.html">Contact 01</a></li>
+                                                <li><a href="contact-2.html">Contact 02</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="login.html">Login</a></li>
+                                        <li><a href="faq.html">FAQs</a></li>
+                                        <li><a href="404.html">Error 404</a></li>
+                                        <li><a href="coming-soon.html">Coming Soon</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="category.html" class="sf-with-ul">Shop</a>
+                                </li>
+                                <li>
+                                    <a href="product.html" class="sf-with-ul">Product</a>
+                                </li>
+                            </ul><!-- End .menu -->
+                        </nav><!-- End .main-nav -->
+                    </div>
+
+                    <div class="col col-lg-3 col-xl-3 col-xxl-2 header-right">
+                        <i class="la la-lightbulb-o"></i>
+                        <p>Clearance Up to 30% Off</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    {# Main content of page - other layout templates may override this block #}
+    
+    <main class="main">
+        {% block content_wrapper %}
+        {% block breadcrumbs %} {% endblock %}
+
+        <div class="page-content">
+            {% block header %}
+            <div class="page-header text-center" style="background-image: url('{% static 'assets/images/page-header-bg.jpg' %}')">
+        		<div class="container">
+        			<h1 class="page-title">{% block headertext %} {% endblock %}</h1>
+        		</div>
+        	</div>
+            {% endblock %}
+            {% include "oscar/partials/alert_messages.html" %}
+            {% block subnavigation %}{% endblock %}
+            <div class="">
+                {% block subheader %} {% endblock subheader %}
+                {% block content %}
+
+                {% endblock %}
+            </div>
+        </div>
+        {% endblock %}
+    </main>
+</div>
+
+
+{% include "oscar/partials/footer.html" %}
+{% endblock %}
+
+{% block cdn_scripts %}
+{{ block.super }}
+{% if use_less and debug %}
+{# Load the on-the-fly less compiler. Never do this in production. #}
+<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js"></script>
+{% endif %}
+{% endblock %}
+
+{# Local scripts #}
+{% block scripts %}
+{{ block.super }}
+<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.hoverIntent.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'assets/js/superfish.min.js' %}"></script>
+<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'assets/js/bootstrap-input-spinner.js' %}"></script>
+<script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.plugin.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.countdown.min.js' %}"></script>
+<script src="{% static 'assets/js/main.js' %}"></script>
+<script src="{% static 'assets/js/demos/demo-14.js' %}"></script>
+<!-- Oscar -->
+<script src="{% static 'oscar/js/oscar/ui.js' %}"></script>
+{% endblock %}
+
+{% block extrascripts %}
+{% include "oscar/partials/extrascripts.html" %}
+{{ block.super }}
+{% endblock %}
+
+{% block onbodyload %}
+{{ block.super }}
+oscar.init();
+{% endblock %}

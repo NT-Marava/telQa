@@ -1,0 +1,29 @@
+{% load currency_filters %}
+{% load i18n %}
+{% load purchase_info_tags %}
+
+{% purchase_info_for_product request product as session %}
+
+{% if session.price.exists %}
+    {% if session.price.excl_tax == 0 %}
+        <div class="product-price">{% trans "Free" %}</div>
+    {% elif session.price.is_tax_known %}
+        <div class="product-price">{{ session.price.incl_tax|currency:session.price.currency }}</div>
+    {% else %}
+        <div class="product-price">{{ session.price.excl_tax|currency:session.price.currency }}</div>
+    {% endif %}
+{% else %}
+    <p class="product-price">&nbsp;</p>
+{% endif %}
+<small class="{{ session.availability.code }} availability">
+    {% if session.availability.is_available_to_buy %}
+        <i class="fas fa-check-circle"></i>
+    {% else %}
+        <i class="fas fa-ban"></i>
+    {% endif %}
+    {% if verbose %}
+        {{ session.availability.message }}
+    {% else %}
+        {{ session.availability.short_message }}
+    {% endif %}
+</small>

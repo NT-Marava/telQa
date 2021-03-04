@@ -1,0 +1,106 @@
+{% load currency_filters %}
+{% load category_tags %}
+{% load i18n %}
+
+<!-- <nav class="{% block nav_classes %}navbar navbar-expand-lg navbar-dark bg-dark{% endblock %}">
+    {% block navbar_toggler %}
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    {% endblock %}
+
+    {% block navbar_basket %}
+        <a class="btn btn-secondary float-right btn-cart ml-auto d-inline-block d-md-none" 
+        href="{% url 'basket:summary' %}">
+            <i class="fas fa-shopping-cart"></i>
+            {% trans "Basket" %}
+            {% if not request.basket.is_empty %}
+                {% if request.basket.is_tax_known %}
+                    {% blocktrans with total=request.basket.total_incl_tax|currency:request.basket.currency %}
+                        Total: {{ total }}
+                    {% endblocktrans %}
+                {% else %}
+                    {% blocktrans with total=request.basket.total_excl_tax|currency:request.basket.currency %}
+                        Total: {{ total }}
+                    {% endblocktrans %}
+                {% endif %}
+            {% endif %}
+        </a>
+    {% endblock %}
+
+    {% block navbar_collapse %}
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            {% block nav %}
+                <ul class="navbar-nav mr-auto">
+                    {% block nav_items %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {% block browse_store_text %}{% trans "Browse store" %}{% endblock %}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                {% category_tree depth=1 as tree_categories %}
+                                <a class="dropdown-item" href="{% url 'catalogue:index' %}">{% trans "All products" %}</a>
+                                {% if tree_categories %}
+                                    <div class="dropdown-divider"></div>
+                                    {% for tree_category in tree_categories %}
+                                        <a class="dropdown-item" href="{{ tree_category.get_absolute_url }}">{{ tree_category.name }}</a>
+                                    {% endfor %}
+                                {% endif %}
+                                <div class="dropdown-divider"></div>
+                                {% block nav_dropdown_extra_items %}
+                                    <a class="dropdown-item" href="{% url 'offer:list' %}">{% trans "Offers" %}</a>
+                                {% endblock %}
+                            </div>
+                        </li>
+                   {% endblock %}
+               </ul>
+            {% endblock %}
+
+            {% block nav_extra %}
+                {% include "oscar/partials/search.html" %}
+            {% endblock %}
+        </div>
+    {% endblock %}
+</nav> -->
+
+
+<div class="col col-lg-9 col-xl-9 col-xxl-10 header-middle-right">
+    <div class="row">
+        <div class="col-lg-8 col-xxl-4-5col d-none d-lg-block">
+            <div class="header-search header-search-extended header-search-visible header-search-no-radius">
+                <a href="#" class="search-toggle" role="button"><i class="icon-search"></i></a>
+                <form action="#" method="get">
+                    <div class="header-search-wrapper search-wrapper-wide">
+
+                        <div class="select-custom">
+                            <select id="cat" name="cat">
+                                <option value="">All Departments</option>
+                                <option value="1">Fashion</option>
+                                <option value="2">- Women</option>
+                                <option value="3">- Men</option>
+                                <option value="4">- Jewellery</option>
+                                <option value="5">- Kids Fashion</option>
+                                <option value="6">Electronics</option>
+                                <option value="7">- Smart TVs</option>
+                                <option value="8">- Cameras</option>
+                                <option value="9">- Games</option>
+                                <option value="10">Home &amp; Garden</option>
+                                <option value="11">Motors</option>
+                                <option value="12">- Cars and Trucks</option>
+                                <option value="15">- Boats</option>
+                                <option value="16">- Auto Tools &amp; Supplies</option>
+                            </select>
+                        </div>
+                        <label for="q" class="sr-only">Search</label>
+                        <input type="search" class="form-control" name="q" id="q" placeholder="Search product ..." required>
+
+                        <button class="btn btn-primary" type="submit"><i class="icon-search"></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        {% block mini_basket %}{% include "oscar/partials/mini_basket.html" %}{% endblock %}
+       
+    </div>
+</div>
