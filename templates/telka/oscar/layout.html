@@ -13,14 +13,14 @@
 <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
 <link rel="stylesheet" href="{% static 'assets/css/plugins/fontawesome/css/all.css' %}">
 <link rel="stylesheet" href="{% static 'assets/css/skins/skin-demo-14.css' %}">
-<link rel="stylesheet" href="{% static 'assets/css/demos/demo-14.cs' %}">
+<link rel="stylesheet" href="{% static 'assets/css/demos/demo-14.css' %}">
 
 {% endblock %}
 
 {% block layout %}
 <div class="page-wrapper">
-    <header class="header header-14">
-        <div class="header-top">
+    <header class="header header-14" >
+        <div class="header-top" style="    background-color: #333;">
             {# Top-horizontal bar with account, notifictions, dashboard links #}
             {% include "oscar/partials/nav_accounts.html" %}
 
@@ -88,61 +88,33 @@
 
                     <div class="col col-lg-6 col-xl-6 col-xxl-8 header-center">
                         <nav class="main-nav">
-                            <ul class="menu sf-arrows">
+                            <!-- <ul class="menu sf-arrows">
                                 <li class="megamenu-container active">
-                                    <a href="index.html" class="sf-with-ul">Home</a>
-                    
-                                    <div class="megamenu demo">
-                                        <div class="menu-col">
-                                            <div class="menu-title">Choose your demo</div><!-- End .menu-title -->
-                                        </div><!-- End .menu-col -->
-                                    </div><!-- End .megamenu -->
+                                    <a href="#" class="sf-with-ul">Home</a>
                                 </li>
                                 <li>
-                                    <a href="category.html" class="sf-with-ul">Shop</a>
+                                    <a href="#" class="sf-with-ul">Shop</a>
                                 </li>
                                 <li>
-                                    <a href="product.html" class="sf-with-ul">Product</a>
+                                    <a href="#" class="sf-with-ul">Product</a>
                                 </li>
                                 <li>
                                     <a href="#" class="sf-with-ul">Pages</a>
                     
-                                    <ul>
-                                        <li>
-                                            <a href="about.html" class="sf-with-ul">About</a>
-                    
-                                            <ul>
-                                                <li><a href="about.html">About 01</a></li>
-                                                <li><a href="about-2.html">About 02</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="contact.html" class="sf-with-ul">Contact</a>
-                    
-                                            <ul>
-                                                <li><a href="contact.html">Contact 01</a></li>
-                                                <li><a href="contact-2.html">Contact 02</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="login.html">Login</a></li>
-                                        <li><a href="faq.html">FAQs</a></li>
-                                        <li><a href="404.html">Error 404</a></li>
-                                        <li><a href="coming-soon.html">Coming Soon</a></li>
-                                    </ul>
                                 </li>
                                 <li>
-                                    <a href="category.html" class="sf-with-ul">Shop</a>
+                                    <a href="#" class="sf-with-ul">Shop</a>
                                 </li>
                                 <li>
-                                    <a href="product.html" class="sf-with-ul">Product</a>
+                                    <a href="#" class="sf-with-ul">Products</a>
                                 </li>
-                            </ul><!-- End .menu -->
-                        </nav><!-- End .main-nav -->
+                            </ul> -->
+                        </nav>
                     </div>
 
                     <div class="col col-lg-3 col-xl-3 col-xxl-2 header-right">
                         <i class="la la-lightbulb-o"></i>
-                        <p>Clearance Up to 30% Off</span></p>
+                        <p>Telka Trading</span></p>
                     </div>
                 </div>
             </div>
@@ -159,7 +131,7 @@
             {% block header %}
             <div class="page-header text-center" style="background-image: url('{% static 'assets/images/page-header-bg.jpg' %}')">
         		<div class="container">
-        			<h1 class="page-title">{% block headertext %} {% endblock %}</h1>
+        			<h4 class="page-title">{% block headertext %} {% endblock %}</h4>
         		</div>
         	</div>
             {% endblock %}
@@ -197,6 +169,13 @@
 <script src="{% static 'assets/js/jquery.waypoints.min.js' %}"></script>
 <script src="{% static 'assets/js/superfish.min.js' %}"></script>
 <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+
+<script src="{% static 'oscar/js/oscar/ui.js' %}"></script>
+    <!-- Twitter Bootstrap -->
+    <script src="{% static 'oscar/js/bootstrap4/bootstrap.bundle.js' %}"></script>
+    <!-- Oscar -->
+    <script src="{% static 'oscar/js/oscar/ui.js' %}"></script>
+
 <script src="{% static 'assets/js/bootstrap-input-spinner.js' %}"></script>
 <script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
 <script src="{% static 'assets/js/jquery.plugin.min.js' %}"></script>
@@ -204,7 +183,7 @@
 <script src="{% static 'assets/js/main.js' %}"></script>
 <script src="{% static 'assets/js/demos/demo-14.js' %}"></script>
 <!-- Oscar -->
-<script src="{% static 'oscar/js/oscar/ui.js' %}"></script>
+
 {% endblock %}
 
 {% block extrascripts %}

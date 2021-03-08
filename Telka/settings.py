@@ -31,19 +31,20 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+SITE_ID = 1
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
+   'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+
     'django.contrib.sites',
     'django.contrib.flatpages',
+
     'oscar.config.Shop',
     'oscar.apps.analytics.apps.AnalyticsConfig',
     'oscar.apps.checkout.apps.CheckoutConfig',
@@ -74,12 +75,13 @@ INSTALLED_APPS = [
     'oscar.apps.dashboard.vouchers.apps.VouchersDashboardConfig',
     'oscar.apps.dashboard.communications.apps.CommunicationsDashboardConfig',
     'oscar.apps.dashboard.shipping.apps.ShippingDashboardConfig',
+
     # 3rd-party apps that oscar depends on
     'widget_tweaks',
     'haystack',
     'treebeard',
-    'sorl.thumbnail',
-    'django_tables2',
+    'sorl.thumbnail',   # Default thumbnail backend, can be replaced
+    'django_tables2'
 ]
 
 MIDDLEWARE = [
@@ -201,3 +203,6 @@ OSCAR_ORDER_STATUS_PIPELINE = {
     'Being processed': ('Processed', 'Cancelled',),
     'Cancelled': (),
 }
+OSCAR_ALLOW_ANON_CHECKOUT=True
+OSCAR_DEFAULT_CURRENCY ='USD'
+OSCAR_USE_SCSS = False

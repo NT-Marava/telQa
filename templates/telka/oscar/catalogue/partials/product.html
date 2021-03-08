@@ -13,10 +13,13 @@
                 <figure class="product-media">
                     {% with image=product.primary_image %}
                     {% oscar_thumbnail image.original "x155" upscale=False as thumb %}
-                    <a href="{{ product.get_absolute_url }}">
-                        <img src="{{ thumb.url }}" alt="{{ product.get_title }}" class="product-image">
-                    </a>
-
+                    <div class="" style="    min-height: 165px;">
+                        <a href="{{ product.get_absolute_url }}">
+                            <img src="{{ thumb.url }}" alt="{{ product.get_title }}" class="product-image img-fluid" style="
+                                max-height: 200px;
+                                max-width: 100%;">
+                        </a>
+                    </div>
                      <div class="product-action-vertical">
                         <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add to
                                 wishlist</span></a>
@@ -25,7 +28,7 @@
                         <a href="#" class="btn-product-icon btn-compare" title="Compare"><span>Compare</span></a>
                     </div> 
 
-                    <div class="product-action ">
+                    <div class="product-action p-0">
                         {% if not product.is_parent and not product.has_options %}
                         {% include "oscar/catalogue/partials/add_to_basket_form_compact.html" %}
                         {% endif %}
@@ -42,14 +45,13 @@
                             title="{{ product.get_title }}">{{ product.get_title|truncatewords:3}}</a></h3>
                     {% endblock %}
 
-                    {% block product_price %}
+                     {% block product_price %}
                     <div class="">
-                        {% include "oscar/catalogue/partials/stock_record.html" %}
-                        
+                        {% include "oscar/catalogue/partials/stock_record.html" %}    
                     </div>
                     {% endblock %}
 
-                    {% block product_review %}
+                    <!--{% block product_review %}
                     {% iffeature "reviews" %}
                     <div class="ratings-container">
                         <div class="ratings">
@@ -58,7 +60,7 @@
                         <span class="ratings-text {{ product.rating|as_stars }}"></span>
                     </div>
                     {% endiffeature %}
-                    {% endblock %}
+                    {% endblock %} -->
 
 
                     
