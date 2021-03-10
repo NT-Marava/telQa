@@ -1,5 +1,5 @@
 {% load i18n %}
-                <div class="container-fluid">
+                <div class="container-fluid"  style="padding-top: .8rem;padding-bottom: .8rem;">
                     <div class="header-left">
                         <a href="tel:#"><i class="icon-phone"></i>Call: +0123 456 789</a>
                     </div><!-- End .header-left -->
@@ -10,17 +10,7 @@
                             <li>
                                 <a href="#">Links</a>
                                 <ul class="menus">
-                                    <li>
-                                        <div class="header-dropdown">
-                                            <a href="#">USD</a>
-                                            <div class="header-menu">
-                                                <ul>
-                                                    <li><a href="#">Eur</a></li>
-                                                    <li><a href="#">Usd</a></li>
-                                                </ul>
-                                            </div><!-- End .header-menu -->
-                                        </div><!-- End .header-dropdown -->
-                                    </li>
+                                 
 										{% if user.is_authenticated %}
 										{% block nav_account_navbar_authenticated %}
 											<li>

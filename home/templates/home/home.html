@@ -1,0 +1,951 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block main_content %}
+<div class="page-wrapper">
+    <div class="wrap-container">   
+        <main class="main">
+            <div class="mb-2"></div><!-- End .mb-2 -->
+
+            <div class="containe">
+                <div class="row">
+                    <div class="col-xl-3 d-none d-xl-block">
+                        <nav class="side-nav">
+                            <div class="sidenav-title">Browse Categories</div><!-- End .sidenav-title -->
+                            <ul class="menu-vertical sf-arrows">
+                                <li class="megamenu-container">
+                                    <a class="sf-with-ul" href="#"><i
+                                            class="icon-laptop"></i>Electronics</a>
+                        
+                                    <div class="megamenu">
+                                        <div class="row no-gutters">
+                                            <div class="col-md-8">
+                                                <div class="menu-col">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="menu-title">Laptops & Computers
+                                                            </div><!-- End .menu-title -->
+                                                            <ul>
+                                                                <li><a href="#">Desktop Computers</a></li>
+                                                                <li><a href="#">Monitors</a></li>
+                                                                <li><a href="#">Laptops</a></li>
+                                                                <li><a href="#">iPad & Tablets</a></li>
+                                                                <li><a href="#">Hard Drives & Storage</a>
+                                                                </li>
+                                                                <li><a href="#">Printers & Supplies</a></li>
+                                                                <li><a href="#">Computer Accessories</a>
+                                                                </li>
+                                                            </ul>
+                        
+                                                            <div class="menu-title">TV & Video</div>
+                                                            <!-- End .menu-title -->
+                                                            <ul>
+                                                                <li><a href="#">TVs</a></li>
+                                                                <li><a href="#">Home Audio Speakers</a></li>
+                                                                <li><a href="#">Projectors</a></li>
+                                                                <li><a href="#">Media Streaming Devices</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div><!-- End .col-md-6 -->
+                        
+                                                        <div class="col-md-6">
+                                                            <div class="menu-title">Cell Phones</div>
+                                                            <!-- End .menu-title -->
+                                                            <ul>
+                                                                <li><a href="#">Carrier Phones</a></li>
+                                                                <li><a href="#">Unlocked Phones</a></li>
+                                                                <li><a href="#">Phone & Cellphone Cases</a>
+                                                                </li>
+                                                                <li><a href="#">Cellphone Chargers </a></li>
+                                                            </ul>
+                        
+                                                            <div class="menu-title">Digital Cameras</div>
+                                                            <!-- End .menu-title -->
+                                                            <ul>
+                                                                <li><a href="#">Digital SLR Cameras</a></li>
+                                                                <li><a href="#">Sports & Action Cameras</a>
+                                                                </li>
+                                                                <li><a href="#">Camcorders</a></li>
+                                                                <li><a href="#">Camera Lenses</a></li>
+                                                                <li><a href="#">Photo Printer</a></li>
+                                                                <li><a href="#">Digital Memory Cards</a>
+                                                                </li>
+                                                                <li><a href="#">Camera Bags, Backpacks &
+                                                                        Cases</a></li>
+                                                            </ul>
+                                                        </div><!-- End .col-md-6 -->
+                                                    </div><!-- End .row -->
+                                                </div><!-- End .menu-col -->
+                                            </div><!-- End .col-md-8 -->
+                        
+                                            <div class="col-md-4">
+                                                <div class="banner banner-overlay">
+                                                    <a href="category.html" class="banner banner-menu">
+                                                        <img src="{% static 'assets/images/demos/demo-13/menu/banner-1.jpg' %}"
+                                                            alt="Banner">
+                                                    </a>
+                                                </div><!-- End .banner banner-overlay -->
+                                            </div><!-- End .col-md-4 -->
+                                        </div><!-- End .row -->
+                                    </div><!-- End .megamenu -->
+                                </li>
+                                <li class="megamenu-container">
+                                    <a class="sf-with-ul" href="#"><i class="icon-couch"></i>Furniture</a>
+                        
+                                    <div class="megamenu">
+                                        <div class="row no-gutters">
+                                            <div class="col-md-8">
+                                                <div class="menu-col">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="menu-title">Bedroom</div>
+                                                            <!-- End .menu-title -->
+                                                            <ul>
+                                                                <li><a href="#">Beds, Frames & Bases</a>
+                                                                </li>
+                                                                <li><a href="#">Dressers</a></li>
+                                                                <li><a href="#">Nightstands</a></li>
+                                                                <li><a href="#">Kids' Beds & Headboards</a>
+                                                                </li>
+                                                                <li><a href="#">Armoires</a></li>
+                                                            </ul>
+                        
+                                                            <div class="menu-title">Living Room</div>
+                                                            <!-- End .menu-title -->
+                                                            <ul>
+                                                                <li><a href="#">Coffee Tables</a></li>
+                                                                <li><a href="#">Chairs</a></li>
+                                                                <li><a href="#">Tables</a></li>
+                                                                <li><a href="#">Futons & Sofa Beds</a></li>
+                                                                <li><a href="#">Cabinets & Chests</a></li>
+                                                            </ul>
+                                                        </div><!-- End .col-md-6 -->
+                        
+                                                        <div class="col-md-6">
+                                                            <div class="menu-title">Office</div>
+                                                            <!-- End .menu-title -->
+                                                            <ul>
+                                                                <li><a href="#">Office Chairs</a></li>
+                                                                <li><a href="#">Desks</a></li>
+                                                                <li><a href="#">Bookcases</a></li>
+                                                                <li><a href="#">File Cabinets</a></li>
+                                                                <li><a href="#">Breakroom Tables</a></li>
+                                                            </ul>
+                        
+                                                            <div class="menu-title">Kitchen & Dining</div>
+                                                            <!-- End .menu-title -->
+                                                            <ul>
+                                                                <li><a href="#">Dining Sets</a></li>
+                                                                <li><a href="#">Kitchen Storage Cabinets</a>
+                                                                </li>
+                                                                <li><a href="#">Bakers Racks</a></li>
+                                                                <li><a href="#">Dining Chairs</a></li>
+                                                                <li><a href="#">Dining Room Tables</a></li>
+                                                                <li><a href="#">Bar Stools</a></li>
+                                                            </ul>
+                                                        </div><!-- End .col-md-6 -->
+                                                    </div><!-- End .row -->
+                                                </div><!-- End .menu-col -->
+                                            </div><!-- End .col-md-8 -->
+                        
+                                            <div class="col-md-4">
+                                                <div class="banner banner-overlay">
+                                                    <a href="category.html" class="banner banner-menu">
+                                                        <img src="{% static 'assets/images/demos/demo-13/menu/banner-2.jpg' %}"
+                                                            alt="Banner">
+                                                    </a>
+                                                </div><!-- End .banner banner-overlay -->
+                                            </div><!-- End .col-md-4 -->
+                                        </div><!-- End .row -->
+                                    </div><!-- End .megamenu -->
+                                </li>
+                                <li class="megamenu-container">
+                                    <a class="sf-with-ul" href="#"><i
+                                            class="icon-concierge-bell"></i>Cooking</a>
+                        
+                                    <div class="megamenu">
+                                        <div class="menu-col">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="menu-title">Cookware</div>
+                                                    <!-- End .menu-title -->
+                                                    <ul>
+                                                        <li><a href="#">Cookware Sets</a></li>
+                                                        <li><a href="#">Pans, Griddles & Woks</a></li>
+                                                        <li><a href="#">Pots</a></li>
+                                                        <li><a href="#">Skillets & Grill Pans</a></li>
+                                                        <li><a href="#">Kettles</a></li>
+                                                        <li><a href="#">Soup & Stockpots</a></li>
+                                                    </ul>
+                                                </div><!-- End .col-md-4 -->
+                        
+                                                <div class="col-md-4">
+                                                    <div class="menu-title">Dinnerware & Tabletop</div>
+                                                    <!-- End .menu-title -->
+                                                    <ul>
+                                                        <li><a href="#">Plates</a></li>
+                                                        <li><a href="#">Cups & Mugs</a></li>
+                                                        <li><a href="#">Trays & Platters</a></li>
+                                                        <li><a href="#">Coffee & Tea Serving</a></li>
+                                                        <li><a href="#">Salt & Pepper Shaker</a></li>
+                                                    </ul>
+                                                </div><!-- End .col-md-4 -->
+                        
+                                                <div class="col-md-4">
+                                                    <div class="menu-title">Cooking Appliances</div>
+                                                    <!-- End .menu-title -->
+                                                    <ul>
+                                                        <li><a href="#">Microwaves</a></li>
+                                                        <li><a href="#">Coffee Makers</a></li>
+                                                        <li><a href="#">Mixers & Attachments</a></li>
+                                                        <li><a href="#">Slow Cookers</a></li>
+                                                        <li><a href="#">Air Fryers</a></li>
+                                                        <li><a href="#">Toasters & Ovens</a></li>
+                                                    </ul>
+                                                </div><!-- End .col-md-4 -->
+                                            </div><!-- End .row -->
+                        
+                                            <div class="row menu-banners">
+                                                <div class="col-md-4">
+                                                    <div class="banner">
+                                                        <a href="#">
+                                                            <img src="{% static 'assets/images/demos/demo-13/menu/1.jpg' %}"
+                                                                alt="image">
+                                                        </a>
+                                                    </div><!-- End .banner -->
+                                                </div><!-- End .col-md-4 -->
+                        
+                                                <div class="col-md-4">
+                                                    <div class="banner">
+                                                        <a href="#">
+                                                            <img src="{% static 'assets/images/demos/demo-13/menu/2.jpg' %}"
+                                                                alt="image">
+                                                        </a>
+                                                    </div><!-- End .banner -->
+                                                </div><!-- End .col-md-4 -->
+                        
+                                                <div class="col-md-4">
+                                                    <div class="banner">
+                                                        <a href="#">
+                                                            <img src="{% static 'assets/images/demos/demo-13/menu/3.jpg' %}"
+                                                                alt="image">
+                                                        </a>
+                                                    </div><!-- End .banner -->
+                                                </div><!-- End .col-md-4 -->
+                                            </div><!-- End .row -->
+                                        </div><!-- End .menu-col -->
+                                    </div><!-- End .megamenu -->
+                                </li>
+                                <li class="megamenu-container">
+                                    <a class="sf-with-ul" href="#"><i class="icon-tshirt"></i>Clothing</a>
+                        
+                                    <div class="megamenu">
+                                        <div class="row no-gutters">
+                                            <div class="col-md-8">
+                                                <div class="menu-col">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="menu-title">Women</div>
+                                                            <!-- End .menu-title -->
+                                                            <ul>
+                                                                <li><a href="#"><strong>New
+                                                                            Arrivals</strong></a></li>
+                                                                <li><a href="#"><strong>Best
+                                                                            Sellers</strong></a></li>
+                                                                <li><a
+                                                                        href="#"><strong>Trending</strong></a>
+                                                                </li>
+                                                                <li><a href="#">Clothing</a></li>
+                                                                <li><a href="#">Shoes</a></li>
+                                                                <li><a href="#">Bags</a></li>
+                                                                <li><a href="#">Accessories</a></li>
+                                                                <li><a href="#">Jewlery & Watches</a></li>
+                                                                <li><a href="#"><strong>Sale</strong></a>
+                                                                </li>
+                                                            </ul>
+                                                        </div><!-- End .col-md-6 -->
+                        
+                                                        <div class="col-md-6">
+                                                            <div class="menu-title">Men</div>
+                                                            <!-- End .menu-title -->
+                                                            <ul>
+                                                                <li><a href="#"><strong>New
+                                                                            Arrivals</strong></a></li>
+                                                                <li><a href="#"><strong>Best
+                                                                            Sellers</strong></a></li>
+                                                                <li><a
+                                                                        href="#"><strong>Trending</strong></a>
+                                                                </li>
+                                                                <li><a href="#">Clothing</a></li>
+                                                                <li><a href="#">Shoes</a></li>
+                                                                <li><a href="#">Bags</a></li>
+                                                                <li><a href="#">Accessories</a></li>
+                                                                <li><a href="#">Jewlery & Watches</a></li>
+                                                            </ul>
+                                                        </div><!-- End .col-md-6 -->
+                                                    </div><!-- End .row -->
+                                                </div><!-- End .menu-col -->
+                                            </div><!-- End .col-md-8 -->
+                        
+                                            <div class="col-md-4">
+                                                <div class="banner banner-overlay">
+                                                    <a href="category.html" class="banner banner-menu">
+                                                        <img src="{% static 'assets/images/demos/demo-13/menu/banner-3.jpg' %}"
+                                                            alt="Banner">
+                                                    </a>
+                                                </div><!-- End .banner banner-overlay -->
+                                            </div><!-- End .col-md-4 -->
+                                        </div><!-- End .row -->
+                        
+                                        <div class="menu-col menu-brands">
+                                            <div class="row">
+                                                <div class="col-lg-2">
+                                                    <a href="#" class="brand">
+                                                        <img src="{% static 'assets/images/brands/1.png' %}"
+                                                            alt="Brand Name">
+                                                    </a>
+                                                </div><!-- End .col-lg-2 -->
+                        
+                                                <div class="col-lg-2">
+                                                    <a href="#" class="brand">
+                                                        <img src="{% static 'assets/images/brands/2.png' %}"
+                                                            alt="Brand Name">
+                                                    </a>
+                                                </div><!-- End .col-lg-2 -->
+                        
+                                                <div class="col-lg-2">
+                                                    <a href="#" class="brand">
+                                                        <img src="{% static 'assets/images/brands/3.png' %}"
+                                                            alt="Brand Name">
+                                                    </a>
+                                                </div><!-- End .col-lg-2 -->
+                        
+                                                <div class="col-lg-2">
+                                                    <a href="#" class="brand">
+                                                        <img src="{% static 'assets/images/brands/4.png' %}"
+                                                            alt="Brand Name">
+                                                    </a>
+                                                </div><!-- End .col-lg-2 -->
+                        
+                                                <div class="col-lg-2">
+                                                    <a href="#" class="brand">
+                                                        <img src="{% static 'assets/images/brands/5.png' %}"
+                                                            alt="Brand Name">
+                                                    </a>
+                                                </div><!-- End .col-lg-2 -->
+                        
+                                                <div class="col-lg-2">
+                                                    <a href="#" class="brand">
+                                                        <img src="{% static 'assets/images/brands/6.png' %}"
+                                                            alt="Brand Name">
+                                                    </a>
+                                                </div><!-- End .col-lg-2 -->
+                                            </div><!-- End .row -->
+                                        </div><!-- End .menu-brands -->
+                                    </div><!-- End .megamenu -->
+                                </li>
+                                <li><a href="#"><i class="icon-blender"></i>Home Appliances</a></li>
+                                <li><a href="#"><i class="icon-heartbeat"></i>Healthy & Beauty</a></li>
+                                <li><a href="#"><i class="icon-shoe-prints"></i>Shoes & Boots</a></li>
+                                <li><a href="#"><i class="icon-map-signs"></i>Travel & Outdoor</a></li>
+                                <li><a href="#"><i class="icon-mobile-alt"></i>Smart Phones</a></li>
+                                <li><a href="#"><i class="icon-tv"></i>TV & Audio</a></li>
+                                <li><a href="#"><i class="icon-shopping-bag"></i>Backpack & Bag</a></li>
+                                <li><a href="#"><i class="icon-music"></i>Musical Instruments</a></li>
+                                <li><a href="#"><i class="icon-gift"></i>Gift Ideas</a></li>
+                            </ul><!-- End .menu -->
+                        </nav> <!-- End .side-nav -->
+                    </div><!-- End .col-lg-3 -->
+
+                    <div class="col-lg-8 col-xl-6">
+                        <div class="banner banner-overlay banner-lg  content-left">
+                            <a href="#">
+                                <img src="{% static 'assets/images/demos/demo-19/banners/banner-1.jpg' %}" alt="Banner">
+                            </a>
+                            <div class="banner-content">
+                                <h4 class="banner-subtitle">Pre-order now</h4>
+                                <img src="{% static 'assets/images/demos/demo-19/banners/banner-1-title.png' %}" alt="Banner 1 Title" width="217" height="54" class="mb-1">
+                                <a href="#" class="banner-link size-lg">Pre-Order Now<i class="icon-long-arrow-right"></i></a>
+                            </div>
+                        </div><!-- End .banner -->
+                    </div><!-- End .col-lg-6 -->
+
+                    <div class="col-sm-6 col-lg-4 col-xl-3">
+                        <div class="banner banner-overlay banner-sm content-right">
+                            <a href="#">
+                                <img src="{% static 'assets/images/demos/demo-19/banners/banner-2.jpg' %}" alt="Banner">
+                            </a>
+                            <div class="banner-content text-right">
+                                <h4 class="banner-subtitle">Weekend Offer</h4>
+                                <img class="banner-title-img" src="{% static 'assets/images/demos/demo-19/banners/banner-2-title.png' %}" alt="Banner-2">
+                                <h4 class="banner-price">Save<span class="price">$19,99</span></h4>
+                                <a href="#" class="banner-link">Buy Now<i class="icon-long-arrow-right"></i></a>
+                            </div>
+                        </div><!-- End .banner -->
+
+                        <div class="banner banner-overlay d-none d-lg-block banner-sm content-right align-center">
+                            <a href="#">
+                                <img src="{% static 'assets/images/demos/demo-19/banners/banner-3.jpg' %}" alt="Banner">
+                            </a>
+                            <div class="banner-content text-right">
+                                <img class="banner-title-img" src="{% static 'assets/images/demos/demo-19/banners/banner-3-title.png' %}" alt="Banner-3">
+                                <h5 class="text-white">35% OFF</h5>
+                                <a href="#" class="banner-link">Buy Now<i class="icon-long-arrow-right"></i></a>
+                            </div> 
+                        </div><!-- End .banner -->
+                    </div><!-- End .col-lg-3 -->
+
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="banner banner-overlay banner-sm content-right align-center">
+                            <a href="#">
+                                <img src="{% static 'assets/images/demos/demo-19/banners/banner-4.jpg' %}" alt="Banner">
+                            </a>
+                            <div class="banner-content" style="left: auto; right: 3rem; align-items: flex-start;">
+                                <h4 class="banner-subtitle">Weekend Sale</h4>
+                                <img class="banner-title-img" src="{% static 'assets/images/demos/demo-19/banners/banner-4-title.png' %}" alt="Banner-4">
+                                <h4 class="banner-price"><span class="off">25% off</span></h4>
+                                <a href="#" class="banner-link">Buy Now<i class="icon-long-arrow-right"></i></a>
+                            </div>
+                        </div><!-- End .banner -->
+                    </div><!-- End .col-lg-3 -->
+
+                    <div class="col-lg-9">
+                        <div class="banner banner-overlay banner-lg">
+                            <a href="#">
+                                <img src="{% static 'assets/images/demos/demo-19/banners/banner-5.jpg' %}" alt="Banner">
+                            </a>
+                            <div class="banner-content">
+                                <h4 class="banner-subtitle">Amazing Value</h4>
+                                <img class="banner-title-img mb-1" src="{% static 'assets/images/demos/demo-19/banners/banner-5-title.png' %}" alt="Banner-5">
+                                <a href="#" class="banner-link">Pre-Order Now<i class="icon-long-arrow-right"></i></a>
+                            </div>
+                        </div><!-- End .banner -->
+                    </div><!-- End .col-lg-9 -->
+                </div><!-- End .row -->
+            </div><!-- End .container -->
+
+            <div class="icon-boxes-container icon-boxes-separator bg-transparent">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="icon-box icon-box-side">
+                                <span class="icon-box-icon">
+                                    <i class="icon-rocket"></i>
+                                </span>
+                                <div class="icon-box-content">
+                                    <h3 class="icon-box-title">Free Shipping</h3><!-- End .icon-box-title -->
+                                    <p>Orders $50 or more</p>
+                                </div><!-- End .icon-box-content -->
+                            </div><!-- End .icon-box -->
+                        </div><!-- End .col-sm-6 col-lg-3 -->
+
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="icon-box icon-box-side">
+                                <span class="icon-box-icon">
+                                    <i class="icon-rotate-left"></i>
+                                </span>
+
+                                <div class="icon-box-content">
+                                    <h3 class="icon-box-title">Free Returns</h3><!-- End .icon-box-title -->
+                                    <p>Within 30 days</p>
+                                </div><!-- End .icon-box-content -->
+                            </div><!-- End .icon-box -->
+                        </div><!-- End .col-sm-6 col-lg-3 -->
+
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="icon-box icon-box-side">
+                                <span class="icon-box-icon">
+                                    <i class="icon-info-circle"></i>
+                                </span>
+
+                                <div class="icon-box-content">
+                                    <h3 class="icon-box-title">Get 20% Off 1 Item</h3><!-- End .icon-box-title -->
+                                    <p>When you sign up</p>
+                                </div><!-- End .icon-box-content -->
+                            </div><!-- End .icon-box -->
+                        </div><!-- End .col-sm-6 col-lg-3 -->
+
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="icon-box icon-box-side">
+                                <span class="icon-box-icon">
+                                    <i class="icon-life-ring' %}"></i>
+                                </span>
+
+                                <div class="icon-box-content">
+                                    <h3 class="icon-box-title">We Support</h3><!-- End .icon-box-title -->
+                                    <p>24/7 amazing services</p>
+                                </div><!-- End .icon-box-content -->
+                            </div><!-- End .icon-box -->
+                        </div><!-- End .col-sm-6 col-lg-3 -->
+                    </div><!-- End .row -->
+                </div><!-- End .container -->
+            </div><!-- End .icon-boxes-container -->
+
+            <div class="bg-light pt-3 pb-5 mb-5">
+              <!-- End .container -->
+            </div><!-- End .bg-light pt-4 pb-4 -->
+
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-sm-6 col-md-4">
+                        <div class="banner banner-overlay banner-sm banner-ad content-left align-center">
+                            <a href="#">
+                                <img src="{% static 'assets/images/demos/demo-19/banners/banner-6.jpg' %}" alt="Banner">
+                            </a>
+                            <div class="banner-content">
+                                <h4 class="banner-subtitle">Weekend Offer</h4>
+                                <img class="banner-title-img" src="{% static 'assets/images/demos/demo-19/banners/banner-6-title.png' %}" alt="Banner-6">
+                                <h4 class="banner-price"><span class="off" style="font-weight: 600;">Save <span class="price">$19.99</span></span></h4>
+                                <a href="#" class="banner-link">Buy Now<i class="icon-long-arrow-right"></i></a>
+                            </div>
+                        </div><!-- End .banner -->
+                    </div><!-- End .col-md-4 -->
+
+                    <div class="col-sm-6 col-md-4">
+                        <div class="banner banner-overlay banner-sm banner-ad content-left align-center">
+                            <a href="#">
+                                <img src="{% static 'assets/images/demos/demo-19/banners/banner-7.jpg' %}" alt="Banner">
+                            </a>
+                            <div class="banner-content">
+                                <h4 class="banner-subtitle" style="letter-spacing: 0.1em;">Amazing Deal on an</h4>
+                                <h2 class="banner-title mb-0" style="font-size: 3rem;">XBOX ONE</h2>
+                                <h4 class="banner-price"><span class="off" style="font-weight: 600;">Save $50</span></h4>
+                                <a href="#" class="banner-link">Buy Now<i class="icon-long-arrow-right"></i></a>
+                            </div>
+                        </div><!-- End .banner -->
+                    </div><!-- End .col-md-4 -->
+
+                    <div class="col-sm-6 col-md-4">
+                        <div class="banner banner-overlay banner-sm banner-ad content-left align-center">
+                            <a href="#">
+                                <img src="{% static 'assets/images/demos/demo-19/banners/banner-8.jpg' %}" alt="Banner">
+                            </a>
+                            <div class="banner-content">
+                                <h4 class="banner-price text-white mb-1">Save $29.00</h4>
+                                <img class="banner-title-img mb-2" src="{% static 'assets/images/demos/demo-19/banners/banner-8-title.png' %}" alt="Banner-8">
+                                <a href="#" class="banner-link">Buy Now<i class="icon-long-arrow-right"></i></a>
+                            </div>
+                        </div><!-- End .banner -->
+                    </div><!-- End .col-md-4 -->
+                </div><!-- End .row -->
+            </div><!-- End .container -->
+
+            <div class="container">
+                <hr class="mt-0 mb-4">
+            </div><!-- End .container -->
+            
+           
+            <div class="container">
+                <div class="heading heading-flex mb-2">
+                    <div class="heading-left">
+                        <h2 class="title mb-5">Consoles & Accessories</h2><!-- End .title -->
+                    </div><!-- End .heading-left -->
+
+                    <div class="heading-right">
+                        <a href="category.html" class="title-link">View more products <i class="icon-long-arrow-right"></i></a>
+                    </div><!-- End .heading-right -->
+                </div><!-- End .heading -->
+
+                <div class="owl-carousel owl-simple carousel-equal-height carousel-with-shadow" data-toggle="owl" 
+                    data-owl-options='{
+                        "nav": false, 
+                        "dots": true,
+                        "margin": 20,
+                        "loop": false,
+                        "responsive": {
+                            "0": {
+                                "items":2
+                            },
+                            "480": {
+                                "items":2
+                            },
+                            "768": {
+                                "items":3
+                            },
+                            "992": {
+                                "items":4
+                            },
+                            "1200": {
+                                "items":5,
+                                "nav": true
+                            }
+                        }
+                    }'>
+                    <div class="product">
+                        <figure class="product-media">
+                            <span class="product-label label-new">New</span>
+                            <a href="product.html">
+                                <img src="{% static 'assets/images/demos/demo-19/products/product-12.jpg' %}" alt="Product image" class="product-image">
+                            </a>
+
+                            <div class="product-action-vertical">
+                                <a href="#" class="btn-product-icon btn-wishlist" title="Add to Wishlist"><span>add to wishlist</span></a>
+                            </div><!-- End .product-action-vertical -->
+
+                            <div class="product-action">
+                                <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                            </div><!-- End .product-action -->
+                        </figure><!-- End .product-media -->
+
+                        <div class="product-body">
+                            <h3 class="product-title"><a href="product.html">Microsoft - Xbox Elite Wireless Controller</a></h3><!-- End .product-title -->
+                            <div class="product-price">
+                                $149.99
+                            </div><!-- End .product-price -->
+                        </div><!-- End .product-body -->
+                    </div><!-- End .product -->
+
+                    <div class="product">
+                        <figure class="product-media">
+                            <span class="product-label label-top">Top</span>
+                            <a href="product.html">
+                                <img src="{% static 'assets/images/demos/demo-19/products/product-13.jpg' %}" alt="Product image" class="product-image">
+                            </a>
+
+                            <div class="product-action-vertical">
+                                <a href="#" class="btn-product-icon btn-wishlist" title="Add to Wishlist"><span>add to wishlist</span></a>
+                            </div><!-- End .product-action-vertical -->
+
+                            <div class="product-action">
+                                <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                            </div><!-- End .product-action -->
+                        </figure><!-- End .product-media -->
+
+                        <div class="product-body">
+                            <h3 class="product-title"><a href="product.html">Sony - PlayStation 4 1TB Console - Black</a></h3><!-- End .product-title -->
+                            <div class="product-price">
+                                $299.99
+                            </div><!-- End .product-price -->
+                        </div><!-- End .product-body -->
+                    </div><!-- End .product -->
+
+                    <div class="product">
+                        <figure class="product-media">
+                            <a href="product.html">
+                                <img src="{% static 'assets/images/demos/demo-19/products/product-14.jpg' %}" alt="Product image" class="product-image">
+                            </a>
+
+                            <div class="product-action-vertical">
+                                <a href="#" class="btn-product-icon btn-wishlist" title="Add to Wishlist"><span>add to wishlist</span></a>
+                            </div><!-- End .product-action-vertical -->
+
+                            <div class="product-action">
+                                <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                            </div><!-- End .product-action -->
+                        </figure><!-- End .product-media -->
+
+                        <div class="product-body">
+                            <h3 class="product-title"><a href="product.html">Nintendo - Switch 32GB Console</a></h3><!-- End .product-title -->
+                            <div class="product-price">
+                                $149.99
+                            </div><!-- End .product-price -->
+                        </div><!-- End .product-body -->
+                    </div><!-- End .product -->
+
+                    <div class="product">
+                        <figure class="product-media">
+                            <span class="product-label label-top">Top</span>
+                            <a href="product.html">
+                                <img src="{% static 'assets/images/demos/demo-19/products/product-15.jpg' %}" alt="Product image" class="product-image">
+                            </a>
+
+                            <div class="product-action-vertical">
+                                <a href="#" class="btn-product-icon btn-wishlist" title="Add to Wishlist"><span>add to wishlist</span></a>
+                            </div><!-- End .product-action-vertical -->
+
+                            <div class="product-action">
+                                <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                            </div><!-- End .product-action -->
+                        </figure><!-- End .product-media -->
+
+                        <div class="product-body">
+                            <h3 class="product-title"><a href="product.html">HyperX - Cloud Alpha Wired Stereo Gaming Headset</a></h3><!-- End .product-title -->
+                            <div class="product-price">
+                                $99.99
+                            </div><!-- End .product-price -->
+                        </div><!-- End .product-body -->
+                    </div><!-- End .product -->
+
+                    <div class="product">
+                        <figure class="product-media">
+                            <a href="product.html">
+                                <img src="{% static 'assets/images/demos/demo-19/products/product-16.jpg' %}" alt="Product image" class="product-image">
+                            </a>
+
+                            <div class="product-action-vertical">
+                                <a href="#" class="btn-product-icon btn-wishlist" title="Add to Wishlist"><span>add to wishlist</span></a>
+                            </div><!-- End .product-action-vertical -->
+
+                            <div class="product-action">
+                                <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                            </div><!-- End .product-action -->
+                        </figure><!-- End .product-media -->
+
+                        <div class="product-body">
+                            <h3 class="product-title"><a href="product.html">Logitech - G502 HERO Wired Optical Gaming Mouse Pack</a></h3><!-- End .product-title -->
+                            <div class="product-price">
+                                $59.99
+                            </div><!-- End .product-price -->
+                        </div><!-- End .product-body -->
+                    </div><!-- End .product -->
+                </div><!-- End .owl-carousel -->
+
+                <div class="mb-5"></div><!-- End .mb-4 -->
+            </div><!-- End .container -->
+
+            <div class="blog-posts bg-light pt-4 pb-5">
+                <div class="container">
+                    <div class="heading heading-flex mb-2">
+                        <div class="heading-left">
+                            <h2 class="title mb-0">From Our Blog</h2><!-- End .title -->
+                        </div><!-- End .heading-left -->
+
+                        <div class="heading-right">
+                            <a href="blog.html" class="title-link">View more articles <i class="icon-long-arrow-right"></i></a>
+                        </div><!-- End .heading-right -->
+                    </div><!-- End .heading -->
+
+                    <div class="owl-carousel owl-simple carousel-equal-height" data-toggle="owl" 
+                        data-owl-options='{
+                            "nav": false, 
+                            "dots": true,
+                            "items": 3,
+                            "margin": 20,
+                            "loop": false,
+                            "responsive": {
+                                "0": {
+                                    "items":1
+                                },
+                                "600": {
+                                    "items":2
+                                },
+                                "992": {
+                                    "items":3
+                                },
+                                "1200": {
+                                    "items":4,
+                                    "nav": true
+                                }
+                            }
+                        }'>
+                        <article class="entry">
+                            <figure class="entry-media">
+                                <a href="single.html">
+                                    <img src="{% static 'assets/images/demos/demo-19/blog/post-1.jpg' %}" alt="image desc">
+                                </a>
+                            </figure><!-- End .entry-media -->
+
+                            <div class="entry-body">
+                                <div class="entry-meta">
+                                    <a href="#">Nov 22, 2018</a>, 0 Comments
+                                </div><!-- End .entry-meta -->
+
+                                <h3 class="entry-title">
+                                    <a href="single.html">Morbi in sem quis dui placerat mauris sit ornare.</a>
+                                </h3><!-- End .entry-title -->
+                            </div><!-- End .entry-body -->
+                        </article><!-- End .entry -->
+                    
+                        <article class="entry">
+                            <figure class="entry-media">
+                                <a href="single.html">
+                                    <img src="{% static 'assets/images/demos/demo-19/blog/post-2.jpg' %}" alt="image desc">
+                                </a>
+                            </figure><!-- End .entry-media -->
+
+                            <div class="entry-body">
+                                <div class="entry-meta">
+                                    <a href="#">Dec 12, 2018</a>, 0 Comments
+                                </div><!-- End .entry-meta -->
+
+                                <h3 class="entry-title">
+                                    <a href="single.html">Aliquam porttitor mauris sit ametorci.</a>
+                                </h3><!-- End .entry-title -->
+                            </div><!-- End .entry-body -->
+                        </article><!-- End .entry -->
+
+                        <article class="entry">
+                            <figure class="entry-media">
+                                <a href="single.html">
+                                    <img src="{% static 'assets/images/demos/demo-19/blog/post-3.jpg' %}" alt="image desc">
+                                </a>
+                            </figure><!-- End .entry-media -->
+
+                            <div class="entry-body">
+                                <div class="entry-meta">
+                                    <a href="#">Dec 19, 2018</a>, 2 Comments
+                                </div><!-- End .entry-meta -->
+
+                                <h3 class="entry-title">
+                                    <a href="single.html">Cras ornare tristique elit.</a>
+                                </h3><!-- End .entry-title -->
+                            </div><!-- End .entry-body -->
+                        </article><!-- End .entry -->
+
+                        <article class="entry">
+                            <figure class="entry-media">
+                                <a href="single.html">
+                                    <img src="{% static 'assets/images/demos/demo-19/blog/post-4.jpg' %}" alt="image desc">
+                                </a>
+                            </figure><!-- End .entry-media -->
+
+                            <div class="entry-body">
+                                <div class="entry-meta">
+                                    <a href="#">Dec 19, 2018</a>, 2 Comments
+                                </div><!-- End .entry-meta -->
+
+                                <h3 class="entry-title">
+                                    <a href="single.html">Donec consectetuer ligula vulputate sem cursus.</a>
+                                </h3><!-- End .entry-title -->
+                            </div><!-- End .entry-body -->
+                        </article><!-- End .entry -->
+
+                        <article class="entry">
+                            <figure class="entry-media">
+                                <a href="single.html">
+                                    <img src="{% static 'assets/images/demos/demo-19/blog/post-1.jpg' %}" alt="image desc">
+                                </a>
+                            </figure><!-- End .entry-media -->
+
+                            <div class="entry-body">
+                                <div class="entry-meta">
+                                    <a href="#">Nov 22, 2018</a>, 0 Comments
+                                </div><!-- End .entry-meta -->
+
+                                <h3 class="entry-title">
+                                    <a href="single.html">Morbi in sem quis dui placerat mauris sit ornare.</a>
+                                </h3><!-- End .entry-title -->
+                            </div><!-- End .entry-body -->
+                        </article><!-- End .entry -->
+                    </div><!-- End .owl-carousel -->
+                </div><!-- End .container -->
+            </div><!-- End .blog-posts -->
+        </main><!-- End .main -->
+
+    </div><!-- End .wrap-container -->  
+</div><!-- End .page-wrapper -->
+<button id="scroll-top" title="Back to Top"><i class="icon-arrow-up"></i></button>
+
+
+
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu-overlay"></div><!-- End .mobil-menu-overlay -->
+
+  <div class="mobile-menu-container">
+      <div class="mobile-menu-wrapper">
+          <span class="mobile-menu-close"><i class="icon-close"></i></span>
+          
+          <form action="#" method="get" class="mobile-search">
+              <label for="mobile-search" class="sr-only">Search</label>
+              <input type="search" class="form-control" name="mobile-search" id="mobile-search" placeholder="Search in..." required>
+              <button class="btn btn-primary" type="submit"><i class="icon-search"></i></button>
+          </form>
+
+          <ul class="nav nav-pills-mobile nav-border-anim" role="tablist">
+              <li class="nav-item">
+                  <a class="nav-link active" id="mobile-menu-link" data-toggle="tab" href="#mobile-menu-tab" role="tab" aria-controls="mobile-menu-tab" aria-selected="true">Menu</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" id="mobile-cats-link" data-toggle="tab" href="#mobile-cats-tab" role="tab" aria-controls="mobile-cats-tab" aria-selected="false">Categories</a>
+              </li>
+          </ul>
+
+          <div class="tab-content">
+              <div class="tab-pane fade show active" id="mobile-menu-tab" role="tabpanel" aria-labelledby="mobile-menu-link">
+                  <nav class="mobile-nav">
+                      <ul class="mobile-menu">
+                          <li class="active">
+                              <a href="#">Home</a>
+                          </li>
+                          <li>
+                              <a href="#">Shop</a>
+                          </li>
+                      </ul>
+                  </nav><!-- End .mobile-nav -->
+              </div><!-- .End .tab-pane -->
+              <div class="tab-pane fade" id="mobile-cats-tab" role="tabpanel" aria-labelledby="mobile-cats-link">
+                  <nav class="mobile-cats-nav">
+                      <ul class="mobile-menu">
+                          <li>
+                              <a href="#">Playstation</a>
+                              <ul>
+                                  <li>
+                                      <a href="#">Games Software</a>
+
+                                      <ul>
+                                          <li><a href="#">Action</a></li>
+                                          <li><a href="#">Adventure</a></li>
+                                          <li><a href="#">Music</a></li>
+                                          <li><a href="#">Racing</a></li>
+                                          <li><a href="#">Sports</a></li>
+                                          <li><a href="#">Strategy</a></li>
+                                          <li><a href="#">Role-Playing Game</a></li>
+                                          <li><a href="#">Action-Adventure</a></li>
+                                          <li><a href="#">Stealth</a></li>
+                                          <li><a href="#">Shooter</a></li>
+                                          <li><a href="#">Horror</a></li>
+                                      </ul>
+                                  </li>
+                              </ul>
+                          </li>
+                          <li>
+                              <a href="#">XBOX</a>
+                              <ul>
+                                  <li>
+                                      <a href="#">Nindendo</a>
+
+                                      <ul>
+                                          <li><a href="#">Action</a></li>
+                                          <li><a href="#">Adventure</a></li>
+                                          <li><a href="#">Music</a></li>
+                                          <li><a href="#">Racing</a></li>
+                                          <li><a href="#">Sports</a></li>
+                                          <li><a href="#">Strategy</a></li>
+                                          <li><a href="#">Role-Playing Game</a></li>
+                                          <li><a href="#">Action-Adventure</a></li>
+                                          <li><a href="#">Stealth</a></li>
+                                          <li><a href="#">Shooter</a></li>
+                                          <li><a href="#">Horror</a></li>
+                                      </ul>
+                                  </li>
+                                  <li>
+                                      <a href="#">Game Console & Accessories</a>
+
+                                      <ul>
+                                          <li><a href="#">Console</a></li>
+                                          <li><a href="#">Headsets</a></li>
+                                          <li><a href="#">Collectibles</a></li>
+                                          <li><a href="#">Gaming Chairs</a></li>
+                                          <li><a href="#">Controller</a></li>
+                                          <li><a href="#">Digital</a></li>
+                                      </ul>
+                                  </li>
+                              </ul>
+                          </li>
+                          <li><a href="#">Nindendo</a></li>
+                          <li><a href="#">PC Gaming</a></li>
+                          <li><a href="#">Phones & Tablets</a></li>
+                          <li><a href="#">Pre-owned</a></li>
+                          <li><a href="#">Deals</a></li>
+                          <li><a href="#">Coming Soon</a></li>
+                          <li><a href="#">Accessories</a></li>
+                      </ul>
+                  </nav><!-- End .mobile-cats-nav -->
+              </div><!-- .End .tab-pane -->
+          </div><!-- End .tab-content -->
+
+          <div class="social-icons">
+              <a href="#" class="social-icon" target="_blank" title="Facebook"><i class="icon-facebook-f"></i></a>
+              <a href="#" class="social-icon" target="_blank" title="Twitter"><i class="icon-twitter"></i></a>
+              <a href="#" class="social-icon" target="_blank" title="Instagram"><i class="icon-instagram"></i></a>
+              <a href="#" class="social-icon" target="_blank" title="Youtube"><i class="icon-youtube"></i></a>
+          </div><!-- End .social-icons -->
+      </div><!-- End .mobile-menu-wrapper -->
+  </div><!-- End .mobile-menu-container -->
+
+
+
+
+{% endblock main_content %}
+

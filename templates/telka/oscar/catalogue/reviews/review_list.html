@@ -11,7 +11,7 @@
     <nav aria-label="breadcrumb" class="breadcrumb-nav">
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="{{ homepage_url }}">{% trans "Home" %}</a>
+                <a href="{% url 'home' %}">{% trans "Home" %}</a>
             </li>
             {% with category=product.categories.all.0 %}
                 {% for c in category.get_ancestors_and_self %}

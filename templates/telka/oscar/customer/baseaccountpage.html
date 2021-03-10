@@ -13,7 +13,7 @@
     <div class="container d-flex align-items-center">
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="{{ homepage_url }}">{% trans 'Home' %}</a>
+                <a href="{% url 'home' %}">{% trans 'Home' %}</a>
             </li>
             <li class="breadcrumb-item">
                 <a href="{% url 'customer:summary' %}">{% trans 'Account' %}</a>

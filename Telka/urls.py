@@ -19,10 +19,15 @@ from django.urls import include, path
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
+from home import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(apps.get_app_config('oscar').urls[0])),
+    path('', include(apps.get_app_config('oscar').urls[0])),  
+    path('home/', include('home.urls')),
+    path('about/', views.about, name='about'),
+    path('contact-us/', views.contact, name='contact'),
+    path('faqs/', views.faq, name='faqs')
 ]
 
 if settings.DEBUG:

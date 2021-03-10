@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
 <link rel="stylesheet" href="{% static 'assets/css/plugins/fontawesome/css/all.css' %}">
 <link rel="stylesheet" href="{% static 'assets/css/skins/skin-demo-14.css' %}">
-<link rel="stylesheet" href="{% static 'assets/css/demos/demo-14.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/demos/demo-14.cs' %}">
 
 {% endblock %}
 
@@ -123,7 +123,7 @@
 
     {# Main content of page - other layout templates may override this block #}
     
-    <main class="main">
+    <main class="main container-fluid">
         {% block content_wrapper %}
         {% block breadcrumbs %} {% endblock %}
 
@@ -137,7 +137,7 @@
             {% endblock %}
             {% include "oscar/partials/alert_messages.html" %}
             {% block subnavigation %}{% endblock %}
-            <div class="">
+            <div class="container-fluid">
                 {% block subheader %} {% endblock subheader %}
                 {% block content %}
 

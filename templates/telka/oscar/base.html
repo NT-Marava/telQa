@@ -1,127 +1,66 @@
 {% load i18n %}
 {% load static %}
 <!DOCTYPE html>
-<html lang="{{ LANGUAGE_CODE|default:"en-gb" }}" class="{% block html_class %}no-js{% endblock %}">
-    <head>
-        <title>{% block title %}{{ shop_name }} - {{ shop_tagline }}{% endblock %}</title>
+<html lang="{{ LANGUAGE_CODE|default:" en-gb" }}" class="{% block html_class %}no-js{% endblock %}">
 
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-        <meta name="created" content="{% now "jS M Y h:i" %}" />
-        <meta name="description" content="{% block description %}{% endblock %}" />
-        <meta name="viewport" content="{% block viewport %}width=device-width{% endblock %}" />
-        <meta name="robots" content="NOARCHIVE,NOCACHE" />
-        {% block favicon %}
-            <link rel="shortcut icon" href="{% static "assets/favicon.png" %}" />
-        {% endblock %}
+<head>
+    <title>{% block title %}{{ shop_name }} - {{ shop_tagline }}{% endblock %}</title>
 
-        {# Block where global CSS will go. #}
-        {% block styles %}{% endblock %}
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="created" content="{% now " jS M Y h:i" %}" />
+    <meta name="description" content="{% block description %}{% endblock %}" />
+    <meta name="viewport" content="{% block viewport %}width=device-width{% endblock %}" />
+    <meta name="robots" content="NOARCHIVE,NOCACHE" />
+    {% block favicon %}
+    <link rel="shortcut icon" href="{% static " assets/favicon.png" %}" />
+    {% endblock %}
 
-        {# Additional CSS - specific to certain pages #}
-        {% block extrastyles %}{% endblock %}
+    {# Block where global CSS will go. #}
+    {% block styles %}{% endblock %}
 
-        {% block extrahead %}{% endblock %}
+    {# Additional CSS - specific to certain pages #}
+    {% block extrastyles %}{% endblock %}
 
-        {% block tracking %}
-            {# Default to using Google analytics #}
-            {% include "oscar/partials/google_analytics.html" %}
-        {% endblock %}
-    </head>
+    {% block extrahead %}{% endblock %}
 
-    <body id="{% block body_id %}default{% endblock %}" class="{% block body_class %}default{% endblock %}">
-        {# Main content goes in this 'layout' block #}
-        {% block layout %}
-		
-		
-		{% endblock layout %}
+    {% block tracking %}
+    {# Default to using Google analytics #}
+    {% include "oscar/partials/google_analytics.html" %}
+    {% endblock %}
+</head>
 
-        {# Scripts loaded from a CDN. #}
-        {% block cdn_scripts %}
-            <!-- jQuery -->
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-            <script>window.jQuery || document.write('<script src="{% static "oscar/js/jquery/jquery.min.js" %}"><\/script>')</script>
-        {% endblock %}
+<body id="{% block body_id %}default{% endblock %}" class="{% block body_class %}default{% endblock %}">
+    {# Main content goes in this 'layout' block #}
+    {% block layout %}
 
-        {# Local scripts #}
-        {% block scripts %}
-        {% endblock %}
 
-        {# Additional JS scripts #}
-        {% block extrascripts %}{% endblock %}
+    {% endblock layout %}
 
-        {# Block for body onload functions #}
-        <script>
-            $(function() {
-                {% block onbodyload %}{% endblock %}
-            });
-        </script>
+    {# Scripts loaded from a CDN. #}
+    {% block cdn_scripts %}
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{% static "oscar/js/jquery/jquery.min.js" %}"><\/script>')</script>
+    {% endblock %}
 
-        {# Page meta-data - this is populated by the 'metadata' template context processor #}
+    {# Local scripts #}
+    {% block scripts %}
+    {% endblock %}
 
-        <div class="mobile-menu-overlay"></div>
+    {# Additional JS scripts #}
+    {% block extrascripts %}{% endblock %}
 
-        <!-- <div class="mobile-menu-container">
-            <div class="mobile-menu-wrapper">
-                <span class="mobile-menu-close"><i class="icon-close"></i></span>
-    
-                <form action="#" method="get" class="mobile-search">
-                    <label for="mobile-search" class="sr-only">Search</label>
-                    <input type="search" class="form-control" name="mobile-search" id="mobile-search"
-                        placeholder="Search in..." required>
-                    <button class="btn btn-primary" type="submit"><i class="icon-search"></i></button>
-                </form>
-    
-                <ul class="nav nav-pills-mobile" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="mobile-menu-link" data-toggle="tab" href="#mobile-menu-tab"
-                            role="tab" aria-controls="mobile-menu-tab" aria-selected="true">Menu</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="mobile-cats-link" data-toggle="tab" href="#mobile-cats-tab" role="tab"
-                            aria-controls="mobile-cats-tab" aria-selected="false">Categories</a>
-                    </li>
-                </ul>
-    
-                <div class="tab-content">
-                    <div class="tab-pane fade show active" id="mobile-menu-tab" role="tabpanel"
-                        aria-labelledby="mobile-menu-link">
-                        <nav class="mobile-nav">
-                            <ul class="mobile-menu">
-                                <li class="active">
-                                    <a href="index.html">Home</a>
-    
-    
-                                </li>
-    
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="tab-pane fade" id="mobile-cats-tab" role="tabpanel" aria-labelledby="mobile-cats-link">
-                        <nav class="mobile-cats-nav">
-                            <ul class="mobile-cats-menu">
-                                <li><a class="mobile-cats-lead" href="#">Daily offers</a></li>
-                                <li><a class="mobile-cats-lead" href="#">Gift Ideas</a></li>
-                                <li><a href="#">Beds</a></li>
-                                <li><a href="#">Lighting</a></li>
-                                <li><a href="#">Sofas & Sleeper sofas</a></li>
-                                <li><a href="#">Storage</a></li>
-                                <li><a href="#">Armchairs & Chaises</a></li>
-                                <li><a href="#">Decoration </a></li>
-                                <li><a href="#">Kitchen Cabinets</a></li>
-                                <li><a href="#">Coffee & Tables</a></li>
-                                <li><a href="#">Outdoor Furniture </a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-    
-                <div class="social-icons">
-                    <a href="#" class="social-icon" target="_blank" title="Facebook"><i class="icon-facebook-f"></i></a>
-                    <a href="#" class="social-icon" target="_blank" title="Twitter"><i class="icon-twitter"></i></a>
-                    <a href="#" class="social-icon" target="_blank" title="Instagram"><i class="icon-instagram"></i></a>
-                    <a href="#" class="social-icon" target="_blank" title="Youtube"><i class="icon-youtube"></i></a>
-                </div>
-            </div>
-        </div> -->
-    </body>
+    {# Block for body onload functions #}
+    <script>
+        $(function () {
+            {% block onbodyload %} {% endblock %}
+        });
+    </script>
+
+    {# Page meta-data - this is populated by the 'metadata' template context processor #}
+    {% block mobile %}
+        {% include 'home/mobile-menu.html' %}
+    {% endblock mobile %}
+</body>
+
 </html>

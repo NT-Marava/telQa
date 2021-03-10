@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     'django.contrib.sites',
     'django.contrib.flatpages',
+    'home.apps.HomeConfig',
 
     'oscar.config.Shop',
     'oscar.apps.analytics.apps.AnalyticsConfig',
@@ -205,4 +206,5 @@ OSCAR_ORDER_STATUS_PIPELINE = {
 }
 OSCAR_ALLOW_ANON_CHECKOUT=True
 OSCAR_DEFAULT_CURRENCY ='USD'
+OSCAR_HOMEPAGE = 'home'
 OSCAR_USE_SCSS = False
